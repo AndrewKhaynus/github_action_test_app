@@ -25,8 +25,10 @@ jobs:
       JKS: JKS_VALUE
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.TOKEN }}
+      - name: SomeStep
+          run: git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/" && YOUR_COMMAND
+          env:
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
