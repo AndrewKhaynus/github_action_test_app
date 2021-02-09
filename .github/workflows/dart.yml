@@ -23,12 +23,11 @@ jobs:
       SITE_DOMAIN: SITE_DOMAIN_VALUE
       SUPPORT_EMAIL: SUPPORT_EMAIL_VALUE
       JKS: JKS_VALUE
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - name: SomeStep
-          run: git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-          env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+      - run: git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
