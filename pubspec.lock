@@ -142,6 +142,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.0-nullsafety.3"
+  user_agent_data:
+    dependency: "direct main"
+    description:
+      path: user_agent_data
+      ref: HEAD
+      resolved-ref: e1cb75369b26ab2c467fe16e18525954e7e1512c
+      url: "https://github.com/nur-portal/MA-flutter-utils.git"
+    source: git
+    version: "0.0.1"
   vector_math:
     dependency: transitive
     description:
