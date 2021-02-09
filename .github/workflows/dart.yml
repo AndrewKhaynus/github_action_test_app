@@ -24,14 +24,14 @@ jobs:
         with:
           flutter-version: '1.22.6'
         env:
-          ALIAS: '${{ secrets.KEY_ALIAS }}'
-          ALIAS_PASSWORD: '${{ secrets.KEY_ALIAS_PASSWORD }}'
-          KEY_STORE_PASSWORD: '${{ secrets.KEY_STORE_PASSWORD }}'
-          DOMAIN_NAME: '${{ secrets.KEY_DOMAIN_PROD }}'
-          ONESIGNAL: '${{ secrets.KEY_ONESIGNAL_ID_PROD }}'
-          SITE_DOMAIN: '${{ secrets.KEY_SITE_DOMAIN_PROD }}'
-          SUPPORT_EMAIL: '${{ secrets.KEY_SUPPORT_EMAIL }}'
-          JKS: '${{ secrets.KEY_JKS }}'
+          ALIAS: ALIAS_VALUE
+          ALIAS_PASSWORD: ALIAS_PASSWORD_VALUE
+          KEY_STORE_PASSWORD: KEY_STORE_PASSWORD_VALUE
+          DOMAIN_NAME: DOMAIN_NAME_VALUE
+          ONESIGNAL: ONESIGNAL_VALUE
+          SITE_DOMAIN: SITE_DOMAIN_VALUE
+          SUPPORT_EMAIL: SUPPORT_EMAIL_VALUE
+          JKS: JKS_VALUE
 
           run: echo $JKS > nur.keystore && flutter pub get && flutter test && flutter build apk --dart-define=DOMAIN=$DOMAIN_NAME --dart-define=ONE_SIGNAL_ID=$ONESIGNAL --dart-define=SITE_DOMAIN=$SITE_DOMAIN --dart-define=SUPPORT_EMAIL=$SUPPORT_EMAIL
 
