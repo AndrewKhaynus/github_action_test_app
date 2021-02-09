@@ -26,8 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true
-          persist-credentials: false
+          token: ${{ secrets.TOKEN }}
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
