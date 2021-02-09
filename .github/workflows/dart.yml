@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: SomeStep
-          run: git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/" && YOUR_COMMAND
+          run: git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
           env:
             GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - uses: actions/setup-java@v1
