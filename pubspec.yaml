@@ -24,6 +24,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  user_agent_data:
+    git:
+      url: https://github.com/nur-portal/MA-flutter-utils.git
+      path: user_agent_data
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
