@@ -22,7 +22,7 @@ jobs:
       ONESIGNAL: ONESIGNAL_VALUE
       SITE_DOMAIN: SITE_DOMAIN_VALUE
       SUPPORT_EMAIL: SUPPORT_EMAIL_VALUE
-      JKS: JKS_VALUE
+      JKS: ${{ secrets.KEY_JKS }}
       GITHUB_TOKEN: ${{ secrets.KEY_PAT }}
     steps:
       - uses: actions/checkout@v2
@@ -35,9 +35,10 @@ jobs:
         with:
           flutter-version: '1.22.6'
 
-#      - run: echo $JKS > nur.keystore && flutter pub get && flutter test && flutter build apk --dart-define=DOMAIN=$DOMAIN_NAME --dart-define=ONE_SIGNAL_ID=$ONESIGNAL --dart-define=SITE_DOMAIN=$SITE_DOMAIN --dart-define=SUPPORT_EMAIL=$SUPPORT_EMAIL
-      - run : pwd
-#      - uses: actions/upload-artifact@v1
-#        with:
-#          name: release-apk
-#          path: build/app/outputs/apk/release/app-release.apk
+      - run: echo $JKS
+      - run: echo $JKS > android/nur.keystore && flutter pub get && flutter test && flutter build apk --dart-define=DOMAIN=$DOMAIN_NAME --dart-define=ONE_SIGNAL_ID=$ONESIGNAL --dart-define=SITE_DOMAIN=$SITE_DOMAIN --dart-define=SUPPORT_EMAIL=$SUPPORT_EMAIL
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: release-apk
+          path: build/app/outputs/apk/release/app-release.apk
