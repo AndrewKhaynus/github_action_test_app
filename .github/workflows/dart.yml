@@ -23,7 +23,7 @@ jobs:
       SITE_DOMAIN: SITE_DOMAIN_VALUE
       SUPPORT_EMAIL: SUPPORT_EMAIL_VALUE
       JKS: ${{ secrets.KEY_JKS }}
-      GITHUB_TOKEN: ${{ secrets.KEY_PAT }}
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
     steps:
       - uses: actions/checkout@v2
 
